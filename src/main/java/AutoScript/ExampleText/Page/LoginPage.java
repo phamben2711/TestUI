@@ -20,7 +20,8 @@ public class LoginPage {
 	private By password= (By.name("password"));
 	private By loginBtn=(By.xpath("//*[@class='ladda-label']"));
 	private By Darhboard = (By.xpath("//*[@class='container-fluid px-4']"));
-	//Constructor that will be automatically called as soon as the object of the class is created
+	
+
 	public LoginPage (WebDriver driver) {
          this.driver = driver;
 	}
