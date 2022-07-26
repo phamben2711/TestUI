@@ -1,5 +1,7 @@
 package AutoScript.ExampleText.Page;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.time.Duration;
 import java.util.Iterator;
 import java.util.List;
@@ -8,9 +10,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import AutoScript.ExampleText.Variables.LoginData;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginPage {
 	
@@ -32,15 +38,26 @@ public class LoginPage {
 		driver.get(url);
 		return this;
 	}
-	
+	public LoginPage openUrlByWebDriverManager(String url) {
+		ChromeOptions chromeOptions = new ChromeOptions();
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver(chromeOptions);
+		driver.get(url);
+
+		return this;
+	}
 	public LoginPage fillInEmail(String emailjson) {
 		log.info("fill in Email");
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(15));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(email));
 		driver.findElement(email).sendKeys(emailjson);
 		return this;
 	}
 	
 	public LoginPage fillInPassword(String passjson) {
 		log.info("fill in Password");
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(15));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(password));
 		driver.findElement(password).sendKeys(passjson);
 		return this;
 	}
@@ -53,13 +70,13 @@ public class LoginPage {
 	
 	public LoginPage verifyfillInEmail(String expectEmail) {
 		log.info(driver.findElement(email).getText());
-		String actualEmail = driver.findElement(email).getText();
+		String actualEmail = driver.findElement(email).getAttribute("value");
 		Assert.assertEquals(actualEmail, expectEmail);
 		return this;
 	}
 	public LoginPage verifyfillInPassword(String expectPassword) {
 		log.info(driver.findElement(password).getText());
-		String actualPassword =	driver.findElement(password).getText().toString();
+		String actualPassword =	driver.findElement(password).getAttribute("value");
 		Assert.assertEquals(actualPassword,expectPassword);
 		return this;
 	}
@@ -81,6 +98,10 @@ public class LoginPage {
 		
 		return this;
 	}
-
+	public LoginPage LoginWithEmail(String email, String password) {
+		 fillInEmail(email)
+		.fillInPassword(password).clickLogin();
+		return this;
+	}
 
 }

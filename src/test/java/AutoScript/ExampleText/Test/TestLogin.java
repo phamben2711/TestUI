@@ -15,8 +15,10 @@ public class TestLogin {
 	@Test
 public void TestLoginPage() throws InterruptedException {
 	LoginPage login = new LoginPage(driver);
-	login.openURl(LoginData.url, LoginData.typedriver, LoginData.setdriver).fillInEmail("admin@phptravels.com")
-			.fillInPassword("demoadmin").verifyfillInEmail("admin@phptravels.com").verifyfillInPassword("demoadmin")
+	login.openURl(LoginData.url, LoginData.typedriver, LoginData.setdriver).
+	LoginWithEmail("admin@phptravels.com","demoadmin")
+//	fillInEmail("admin@phptravels.com")
+//			.fillInPassword("demoadmin").verifyfillInEmail("admin@phptravels.com").verifyfillInPassword("demoadmin")
 			.clickLogin().verifyHomePageIsPresent();
 }
 	
