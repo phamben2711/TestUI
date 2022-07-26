@@ -10,12 +10,11 @@ import AutoScript.ExampleText.Variables.LoginData;
 public class TestHomePage {
 
 	public WebDriver driver;
+
 	@Test
 public void testHomePageWithOpenBurger()throws InterruptedException 
 {
-		HomePage homePage = new HomePage(driver);
-		new LoginPage(driver).openURl(LoginData.url, LoginData.typedriver, LoginData.setdriver).LoginWithEmail("admin@phptravels.com","demoadmin").verifyHomePageIsPresent();
-		homePage.verifyAllLinkV1InBurger().verifyLinks(LoginData.url);
-		
+		new LoginPage(driver).openURl(LoginData.url, LoginData.typedriver, LoginData.setdriver).LoginWithEmail("admin@phptravels.com","demoadmin");
+		new HomePage(driver).verifyHomePageIsPresent().openBurgerMenu(driver).verifyAllLinkV1InBurger().verifyLinks(LoginData.url);
 }
 }

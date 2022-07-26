@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import AutoScript.ExampleText.Variables.LoginData;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginPage {
@@ -25,7 +25,7 @@ public class LoginPage {
 	private By email= (By.name("email"));
 	private By password= (By.name("password"));
 	private By loginBtn=(By.xpath("//*[@class='ladda-label']"));
-	private By Darhboard = (By.xpath("//*[@class='container-fluid px-4']"));
+
 	
 
 	public LoginPage (WebDriver driver) {
@@ -80,24 +80,8 @@ public class LoginPage {
 		Assert.assertEquals(actualPassword,expectPassword);
 		return this;
 	}
-	public LoginPage verifyHomePageIsPresent() throws InterruptedException  { 
-		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(Darhboard));
-		driver.findElement(Darhboard).isDisplayed();
-		log.info("verify Darhboard Is Present");
-		driver.quit();
-		return this;
-	}
+
 	
-	
-	public LoginPage verifyLoginIsSuccessful(String expectURL)
-	{
-		String actualUrl = driver.getCurrentUrl().toString();
-		
-		
-		
-		return this;
-	}
 	public LoginPage LoginWithEmail(String email, String password) {
 		 fillInEmail(email)
 		.fillInPassword(password).clickLogin();

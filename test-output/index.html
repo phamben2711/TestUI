@@ -130,9 +130,12 @@
                   <a name="testHomePageWithOpenBurger">
                   </a> <!-- testHomePageWithOpenBurger -->
                   <span class="method-name">testHomePageWithOpenBurger</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at AutoScript.ExampleText.Page.HomePage.openBurgerMenu(HomePage.java:67)
-	at AutoScript.ExampleText.Page.HomePage.verifyAllLinkV1InBurger(HomePage.java:38)
+                  <div class="stack-trace">java.lang.IllegalArgumentException: Input must be set
+	at org.openqa.selenium.internal.Require.nonNull(Require.java:59)
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:97)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:77)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:46)
+	at AutoScript.ExampleText.Page.HomePage.verifyHomePageIsPresent(HomePage.java:116)
 	at AutoScript.ExampleText.Test.TestHomePage.testHomePageWithOpenBurger(TestHomePage.java:18)
 	at java.util.ArrayList.forEach(ArrayList.java:1257)
 ... Removed 27 stack frames
@@ -202,12 +205,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testHomePageWithOpenBurger')
 data.setCell(0, 2, 'AutoScript.ExampleText.Test.TestHomePage')
-data.setCell(0, 3, 10889);
+data.setCell(0, 3, 5462);
 window.suiteTableData['TestNG']= { tableData: data, tableDiv: 'times-div-TestNG'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 seconds</span>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
               <div id="times-div-TestNG">
               </div> <!-- times-div-TestNG -->
             </div> <!-- times-div -->

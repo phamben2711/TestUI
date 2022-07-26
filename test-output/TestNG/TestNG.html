@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jul 26 12:05:48 ICT 2022</td>
+<td>Started on:</td><td>Tue Jul 26 15:29:14 ICT 2022</td>
 </tr>
-<tr><td>Total time:</td><td>10 seconds (10929 ms)</td>
+<tr><td>Total time:</td><td>5 seconds (5502 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,15 +76,21 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='AutoScript.ExampleText.Test.TestHomePage.testHomePageWithOpenBurger()'><b>testHomePageWithOpenBurger</b><br>Test class: AutoScript.ExampleText.Test.TestHomePage</td>
-<td><div><pre>java.lang.NullPointerException
-	at AutoScript.ExampleText.Page.HomePage.openBurgerMenu(HomePage.java:67)
-	at AutoScript.ExampleText.Page.HomePage.verifyAllLinkV1InBurger(HomePage.java:38)
+<td><div><pre>java.lang.IllegalArgumentException: Input must be set
+	at org.openqa.selenium.internal.Require.nonNull(Require.java:59)
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:97)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:77)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:46)
+	at AutoScript.ExampleText.Page.HomePage.verifyHomePageIsPresent(HomePage.java:116)
 	at AutoScript.ExampleText.Test.TestHomePage.testHomePageWithOpenBurger(TestHomePage.java:18)
 	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1541433310", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1541433310'><pre>java.lang.NullPointerException
-	at AutoScript.ExampleText.Page.HomePage.openBurgerMenu(HomePage.java:67)
-	at AutoScript.ExampleText.Page.HomePage.verifyAllLinkV1InBurger(HomePage.java:38)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1411543296", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1411543296'><pre>java.lang.IllegalArgumentException: Input must be set
+	at org.openqa.selenium.internal.Require.nonNull(Require.java:59)
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:97)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:77)
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:46)
+	at AutoScript.ExampleText.Page.HomePage.verifyHomePageIsPresent(HomePage.java:116)
 	at AutoScript.ExampleText.Test.TestHomePage.testHomePageWithOpenBurger(TestHomePage.java:18)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -115,7 +121,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>10</td>
+<td>5</td>
 <td>AutoScript.ExampleText.Test.TestHomePage@1060b431</td></tr>
 </table><p>
 </body>
