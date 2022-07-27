@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 
 import org.testng.annotations.Test;
 import org.testng.Assert;
+
+import AutoScript.ExampleText.Page.HomePage;
 import AutoScript.ExampleText.Page.LoginPage;
 import AutoScript.ExampleText.Variables.LoginData;
 
@@ -19,7 +21,8 @@ public void TestLoginPage() throws InterruptedException {
 	LoginWithEmail("admin@phptravels.com","demoadmin")
 //	fillInEmail("admin@phptravels.com")
 //			.fillInPassword("demoadmin").verifyfillInEmail("admin@phptravels.com").verifyfillInPassword("demoadmin")
-			.clickLogin().verifyHomePageIsPresent();
+			.clickLogin();
+	new HomePage(driver).verifyHomePageIsPresent();
 }
 	
 }
