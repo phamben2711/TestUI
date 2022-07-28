@@ -3,8 +3,10 @@ package AutoScript.ExampleText.Page;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -80,10 +82,21 @@ public class LoginPage extends BasePage{
 	}
 
 	
-	public LoginPage LoginWithEmail(String email, String password) {
+	public LoginPage loginWithEmail(String email, String password) {
 		 fillInEmail(email)
 		.fillInPassword(password).clickLogin();
 		 return this;
 	}
+	public LoginPage loginWithEmails(String emai, String password)
+	{
+		Map<String, String> account= new HashMap<String, String>();
+		account.put(emai, password);
+		for(Map.Entry<String, String> data:account.entrySet())
+		{
+			loginWithEmail(data.getKey(),data.getValue());
+		}
+		return this;
+	}
+	
 
 }
