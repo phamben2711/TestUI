@@ -9,7 +9,6 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
@@ -21,21 +20,19 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-
+import org.testng.log4testng.Logger;
 
 import java.io.IOException;
 
 
-public class HomePage {
+public class HomePage extends BasePage{
 	static Logger log = Logger.getLogger(HomePage.class);
-	public WebDriver driver;
 	private By btn_Burger = (By.xpath("//*[@class='container-fluid px-4']//button[@id='drawerToggle']"));
 	private String listlinks = "//*[@class='drawer-menu']//div[@class='nav-link-icon']";
 	private By Darhboard = (By.xpath("//*[@class='container-fluid px-4']"));
 
 	public HomePage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 	}
 	
 	public HomePage verifyAllLinkV1InBurger() {

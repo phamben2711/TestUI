@@ -2,8 +2,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="TestNG">
 <parameter name="suite-param" value="param" />
-<listeners>
-<listener class-name=""></listener>
+ <listeners>
+        <listener class-name="utils.Listener.TestListener"/>
+        <listener class-name="utils.Listener.AnnotationTransformer"/>
 </listeners>
 <test name="TestNG">
 	<classes>

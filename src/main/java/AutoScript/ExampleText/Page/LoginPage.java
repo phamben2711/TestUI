@@ -5,7 +5,7 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.Iterator;
 import java.util.List;
-import org.apache.log4j.Logger;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,14 +14,13 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
+import org.testng.log4testng.Logger;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class LoginPage {
+public class LoginPage extends BasePage{
 	
 	static Logger log = Logger.getLogger(LoginPage.class);
-	public WebDriver driver;
 	private By email= (By.name("email"));
 	private By password= (By.name("password"));
 	private By loginBtn=(By.xpath("//*[@class='ladda-label']"));
@@ -29,12 +28,11 @@ public class LoginPage {
 	
 
 	public LoginPage (WebDriver driver) {
-         this.driver = driver;
+       super(driver);
 	}
 
 	public LoginPage openURl(String url, String typedriver, String setdriver) {
 		System.setProperty(typedriver,setdriver); 
-		driver = new ChromeDriver();
 		driver.get(url);
 		return this;
 	}
@@ -85,7 +83,7 @@ public class LoginPage {
 	public LoginPage LoginWithEmail(String email, String password) {
 		 fillInEmail(email)
 		.fillInPassword(password).clickLogin();
-		return this;
+		 return this;
 	}
 
 }

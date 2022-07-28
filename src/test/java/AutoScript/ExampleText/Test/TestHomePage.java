@@ -1,22 +1,26 @@
 package AutoScript.ExampleText.Test;
 
-import org.openqa.selenium.WebDriver;
+import java.lang.reflect.Method;
+
+
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import AutoScript.ExampleText.Page.HomePage;
 import AutoScript.ExampleText.Page.LoginPage;
 import AutoScript.ExampleText.Variables.LoginData;
+import utils.Listener.TestListener;
 
 
-public class TestHomePage {
-
-	public WebDriver driver;
-
+@Listeners(TestListener.class)
+public class TestHomePage extends TestBase{
+	 
 	@Test
+	
 public void testHomePageWithOpenBurger()throws InterruptedException 
 {
-		new LoginPage(driver).openURl(LoginData.url, LoginData.typedriver, LoginData.setdriver).LoginWithEmail("admin@phptravels.com","demoadmin");
-		new HomePage(driver).verifyHomePageIsPresent().openBurgerMenu(driver).verifyAllLinkV1InBurger().verifyLinks(LoginData.url);
+		loginPage.openURl(LoginData.url, LoginData.typedriver, LoginData.setdriver).LoginWithEmail("admin@phptravels.com","demoadmin");
+		homePage.verifyHomePageIsPresent();
+//		.openBurgerMenu(driver).verifyAllLinkV1InBurger().verifyLinks(LoginData.url);
 }
 }

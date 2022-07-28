@@ -2,10 +2,17 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [TestNG]">
   <parameter name="suite-param" value="param"/>
+  <listeners>
+    <listener class-name="utils.Listener.TestListener"/>
+    <listener class-name="utils.Listener.AnnotationTransformer"/>
+  </listeners>
   <test thread-count="5" name="TestNG(failed)">
     <classes>
       <class name="AutoScript.ExampleText.Test.TestHomePage">
         <methods>
+          <include name="teardown"/>
+          <include name="methodLevelSetup"/>
+          <include name="classLevelSetup"/>
           <include name="testHomePageWithOpenBurger"/>
         </methods>
       </class> <!-- AutoScript.ExampleText.Test.TestHomePage -->

@@ -3,11 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="AutoScript.ExampleText.Test.TestHomePage">
+      <class name="AutoScript.ExampleText.Test.TestLogin">
         <methods>
           <include name="TestLoginPage"/>
+          <include name="teardown"/>
+          <include name="methodLevelSetup"/>
+          <include name="classLevelSetup"/>
         </methods>
-      </class> <!-- AutoScript.ExampleText.Test.TestHomePage -->
+      </class> <!-- AutoScript.ExampleText.Test.TestLogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

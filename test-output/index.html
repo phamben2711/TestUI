@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-TestNG">
-                    <span>C:\Users\Ngocben.pham\eclipse-workspace\TestUI\src\resources\Test1.xml</span>
+                    <span>C:\Users\Ngocben.pham\eclipse-workspace\TestUI\src\main\java\AutoScript\ExampleText\resources\Test1.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -130,15 +130,10 @@
                   <a name="testHomePageWithOpenBurger">
                   </a> <!-- testHomePageWithOpenBurger -->
                   <span class="method-name">testHomePageWithOpenBurger</span>
-                  <div class="stack-trace">java.lang.IllegalArgumentException: Input must be set
-	at org.openqa.selenium.internal.Require.nonNull(Require.java:59)
-	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:97)
-	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:77)
-	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:46)
-	at AutoScript.ExampleText.Page.HomePage.verifyHomePageIsPresent(HomePage.java:116)
-	at AutoScript.ExampleText.Test.TestHomePage.testHomePageWithOpenBurger(TestHomePage.java:18)
+                  <div class="stack-trace">java.lang.NullPointerException
+	at utils.Listener.TestListener.onTestSuccess(TestListener.java:41)
 	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 27 stack frames
+... Removed 24 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -147,7 +142,7 @@
         </div> <!-- panel TestNG -->
         <div panel-name="test-xml-TestNG" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Ngocben.pham\eclipse-workspace\TestUI\src\resources\Test1.xml</span>
+            <span class="header-content">C:\Users\Ngocben.pham\eclipse-workspace\TestUI\src\main\java\AutoScript\ExampleText\resources\Test1.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -155,6 +150,10 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;TestNG&quot;&gt;
   &lt;parameter name=&quot;suite-param&quot; value=&quot;param&quot;/&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;utils.Listener.TestListener&quot;/&gt;
+    &lt;listener class-name=&quot;utils.Listener.AnnotationTransformer&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;TestNG&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;AutoScript.ExampleText.Test.TestHomePage&quot;&gt;
@@ -205,12 +204,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testHomePageWithOpenBurger')
 data.setCell(0, 2, 'AutoScript.ExampleText.Test.TestHomePage')
-data.setCell(0, 3, 5462);
+data.setCell(0, 3, 8963);
 window.suiteTableData['TestNG']= { tableData: data, tableDiv: 'times-div-TestNG'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 8 seconds</span>
               <div id="times-div-TestNG">
               </div> <!-- times-div-TestNG -->
             </div> <!-- times-div -->
@@ -237,12 +236,24 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">AutoScript.ExampleText.Test.TestHomePage</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">classLevelSetup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testHomePageWithOpenBurger</span>
-                <span class="method-start">0 ms</span>
+                <span class="method-start">2650 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">methodLevelSetup</span>
+                <span class="method-start">2659 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-class after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">11643 ms</span>
+              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
