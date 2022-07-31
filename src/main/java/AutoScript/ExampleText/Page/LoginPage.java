@@ -13,6 +13,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -23,9 +25,13 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class LoginPage extends BasePage{
 	
 	static Logger log = Logger.getLogger(LoginPage.class);
-	private By email= (By.name("email"));
-	private By password= (By.name("password"));
-	private By loginBtn=(By.xpath("//*[@class='ladda-label']"));
+//	private By email= (By.name("email"));
+//	private By password= (By.name("password"));
+//	private By loginBtn=(By.xpath("//*[@class='ladda-label']"));
+	private @FindBy(how = How.NAME, using = "email") WebElement email;
+	private @FindBy(how = How.NAME, using = "password") WebElement password;
+	private @FindBy(how = How.XPATH, using = "//*[@class='ladda-label']") WebElement loginBtn;
+
 
 	
 
@@ -49,34 +55,34 @@ public class LoginPage extends BasePage{
 	public LoginPage fillInEmail(String emailjson) {
 		log.info("fill in Email");
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(15));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(email));
-		driver.findElement(email).sendKeys(emailjson);
+		wait.until(ExpectedConditions.visibilityOfElementLocated((By) email));
+		driver.findElement((By) email).sendKeys(emailjson);
 		return this;
 	}
 	
 	public LoginPage fillInPassword(String passjson) {
 		log.info("fill in Password");
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(15));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(password));
-		driver.findElement(password).sendKeys(passjson);
+		wait.until(ExpectedConditions.visibilityOfElementLocated((By) password));
+		driver.findElement((By) password).sendKeys(passjson);
 		return this;
 	}
 	
 	public LoginPage clickLogin() {
 		log.info("Click On Login");
-		driver.findElement(loginBtn).click();
+		driver.findElement((By) loginBtn).click();
 		return this;
 	}
 	
 	public LoginPage verifyfillInEmail(String expectEmail) {
-		log.info(driver.findElement(email).getText());
-		String actualEmail = driver.findElement(email).getAttribute("value");
+		log.info(driver.findElement((By) email).getText());
+		String actualEmail = driver.findElement((By) email).getAttribute("value");
 		Assert.assertEquals(actualEmail, expectEmail);
 		return this;
 	}
 	public LoginPage verifyfillInPassword(String expectPassword) {
-		log.info(driver.findElement(password).getText());
-		String actualPassword =	driver.findElement(password).getAttribute("value");
+		log.info(driver.findElement((By) password).getText());
+		String actualPassword =	driver.findElement((By) password).getAttribute("value");
 		Assert.assertEquals(actualPassword,expectPassword);
 		return this;
 	}

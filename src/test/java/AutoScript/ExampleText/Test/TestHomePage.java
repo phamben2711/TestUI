@@ -19,7 +19,7 @@ public class TestHomePage extends TestBase{
 	
 public void testHomePageWithOpenBurger()throws InterruptedException 
 {
-		loginPage.openURl(LoginData.url, LoginData.typedriver, LoginData.setdriver).LoginWithEmail("admin@phptravels.com","demoadmin");
+		loginPage.openURl(LoginData.url, LoginData.typedriver, LoginData.setdriver).loginWithEmail("admin@phptravels.com","demoadmin");
 		homePage.verifyHomePageIsPresent();
 //		.openBurgerMenu(driver).verifyAllLinkV1InBurger().verifyLinks(LoginData.url);
 }

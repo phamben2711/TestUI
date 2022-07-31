@@ -18,7 +18,7 @@ public class TestLogin extends TestBase{
 public void TestLoginPage() throws InterruptedException {
 
 	loginPage.openURl(LoginData.url, LoginData.typedriver, LoginData.setdriver)
-			.LoginWithEmail("admin@phptravels.com", "demoadmin")
+			.loginWithEmail("admin@phptravels.com", "demoadmin")
 //.verifyfillInEmail("admin@phptravels.com").verifyfillInPassword("demoadmin")
 			.clickLogin();
 	homePage.verifyHomePageIsPresent();

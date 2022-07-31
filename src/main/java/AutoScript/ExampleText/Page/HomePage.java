@@ -1,7 +1,6 @@
 package AutoScript.ExampleText.Page;
 
-import java.awt.Desktop.Action;
-import java.awt.Window;
+
 import java.io.File;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -17,19 +16,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.log4testng.Logger;
 
-import java.io.IOException;
 
 
 public class HomePage extends BasePage{
 	static Logger log = Logger.getLogger(HomePage.class);
-	private By btn_Burger = (By.xpath("//*[@class='container-fluid px-4']//button[@id='drawerToggle']"));
+//	private By btn_Burger = (By.xpath("//*[@class='container-fluid px-4']//button[@id='drawerToggle']"));
+//	private By Darhboard = (By.xpath("//*[@class='container-fluid px-4']"));
 	private String listlinks = "//*[@class='drawer-menu']//div[@class='nav-link-icon']";
-	private By Darhboard = (By.xpath("//*[@class='container-fluid px-4']"));
+	private	@FindBy(how = How.XPATH, using = "//*[@class='container-fluid px-4']//button[@id='drawerToggle']") WebElement btn_Burger;
+	private	@FindBy(how = How.XPATH, using = "//*[@class='container-fluid px-4']") WebElement Darhboard;
+
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -111,8 +114,8 @@ public class HomePage extends BasePage{
 	}
 	public HomePage verifyHomePageIsPresent() throws InterruptedException  { 
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(1000));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(Darhboard));
-		Assert.assertTrue(driver.findElement(Darhboard).isDisplayed());
+		wait.until(ExpectedConditions.visibilityOfElementLocated((By) Darhboard));
+		Assert.assertTrue(driver.findElement((By) Darhboard).isDisplayed());
 		log.info("verify HomePage is displayed");
 		return this;
 	}
