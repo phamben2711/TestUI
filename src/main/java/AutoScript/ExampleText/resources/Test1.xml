@@ -9,10 +9,10 @@
 <test name="TestNG">
 	<classes>
 			<class
-				name="AutoScript.ExampleText.Test.TestHomePage">
+				name="AutoScript.ExampleText.Test.TestLogin">
 				<methods>
 					<include
-						name="testHomePageWithOpenBurger" />
+						name="TestLoginPage" />
 				</methods>
 			</class>
 		</classes>

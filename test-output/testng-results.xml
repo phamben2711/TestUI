@@ -2,23 +2,23 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="TestNG" duration-ms="12850" started-at="2022-07-28T16:07:54 ICT" finished-at="2022-07-28T16:08:07 ICT">
+  <suite name="TestNG" duration-ms="21732" started-at="2022-08-01T10:59:41 ICT" finished-at="2022-08-01T11:00:03 ICT">
     <groups>
     </groups>
-    <test name="TestNG" duration-ms="12850" started-at="2022-07-28T16:07:54 ICT" finished-at="2022-07-28T16:08:07 ICT">
+    <test name="TestNG" duration-ms="21732" started-at="2022-08-01T10:59:41 ICT" finished-at="2022-08-01T11:00:03 ICT">
       <class name="AutoScript.ExampleText.Test.TestHomePage">
-        <test-method status="PASS" signature="classLevelSetup()[pri:0, instance:AutoScript.ExampleText.Test.TestHomePage@1786f9d5]" name="classLevelSetup" is-config="true" duration-ms="2647" started-at="2022-07-28T16:07:55 ICT" finished-at="2022-07-28T16:07:57 ICT">
+        <test-method status="PASS" signature="classLevelSetup()[pri:0, instance:AutoScript.ExampleText.Test.TestHomePage@2eda0940]" name="classLevelSetup" is-config="true" duration-ms="2573" started-at="2022-08-01T10:59:42 ICT" finished-at="2022-08-01T10:59:44 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- classLevelSetup -->
-        <test-method status="FAIL" signature="testHomePageWithOpenBurger()[pri:0, instance:AutoScript.ExampleText.Test.TestHomePage@1786f9d5]" name="testHomePageWithOpenBurger" duration-ms="8963" started-at="2022-07-28T16:07:57 ICT" finished-at="2022-07-28T16:08:06 ICT">
+        <test-method status="FAIL" signature="testHomePageWithOpenBurger()[pri:0, instance:AutoScript.ExampleText.Test.TestHomePage@2eda0940]" name="testHomePageWithOpenBurger" duration-ms="18037" started-at="2022-08-01T10:59:44 ICT" finished-at="2022-08-01T11:00:03 ICT">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
-at utils.Listener.TestListener.onTestSuccess(TestListener.java:41)
-at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:100)
-at org.testng.internal.TestInvoker.runTestResultListener(TestInvoker.java:219)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:656)
+at utils.Listener.Retry.extendReportsFailOperations(Retry.java:35)
+at utils.Listener.Retry.retry(Retry.java:22)
+at org.testng.internal.TestInvoker.handleInvocationResults(TestInvoker.java:486)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:638)
 at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
 at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
 at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
@@ -47,11 +47,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testHomePageWithOpenBurger -->
-        <test-method status="PASS" signature="methodLevelSetup()[pri:0, instance:AutoScript.ExampleText.Test.TestHomePage@1786f9d5]" name="methodLevelSetup" is-config="true" duration-ms="11" started-at="2022-07-28T16:07:57 ICT" finished-at="2022-07-28T16:07:57 ICT">
+        <test-method status="PASS" signature="methodLevelSetup()[pri:0, instance:AutoScript.ExampleText.Test.TestHomePage@2eda0940]" name="methodLevelSetup" is-config="true" duration-ms="12" started-at="2022-08-01T10:59:44 ICT" finished-at="2022-08-01T10:59:44 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- methodLevelSetup -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:AutoScript.ExampleText.Test.TestHomePage@1786f9d5]" name="teardown" is-config="true" duration-ms="766" started-at="2022-07-28T16:08:06 ICT" finished-at="2022-07-28T16:08:07 ICT">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:AutoScript.ExampleText.Test.TestHomePage@2eda0940]" name="teardown" is-config="true" duration-ms="700" started-at="2022-08-01T11:00:03 ICT" finished-at="2022-08-01T11:00:03 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

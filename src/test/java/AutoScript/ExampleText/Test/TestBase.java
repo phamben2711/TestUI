@@ -6,20 +6,25 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import AutoScript.ExampleText.Page.BasePage;
 import AutoScript.ExampleText.Page.HomePage;
 import AutoScript.ExampleText.Page.LoginPage;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import utils.logs.Log;
 
-public class TestBase {
+public class TestBase   {
+
 	public WebDriver driver;
     public HomePage  homePage;
     public LoginPage loginPage;
     public WebDriver getDriver() {
         return driver;
     }
+
     @BeforeClass
     public void classLevelSetup() {
         Log.info("Tests is starting!");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
     }
     @BeforeMethod

@@ -2,6 +2,11 @@ package AutoScript.ExampleText.Test;
 
 
 
+import static utils.extentreports.ExtentTestManager.startTest;
+
+import java.lang.reflect.Method;
+
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -13,11 +18,10 @@ import utils.Listener.TestListener;
 @Listeners(TestListener.class)
 public class TestLogin extends TestBase{
 	
-	
-	@Test
-public void TestLoginPage() throws InterruptedException {
 
-	loginPage.openURl(LoginData.url, LoginData.typedriver, LoginData.setdriver)
+	@Test
+public void TestLoginPage(Method method) throws InterruptedException {
+	loginPage.openUrlByWebDriverManager(LoginData.url)
 			.loginWithEmail("admin@phptravels.com", "demoadmin")
 //.verifyfillInEmail("admin@phptravels.com").verifyfillInPassword("demoadmin")
 			.clickLogin();

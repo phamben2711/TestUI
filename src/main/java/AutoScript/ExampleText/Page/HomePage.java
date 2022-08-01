@@ -26,12 +26,16 @@ import org.testng.log4testng.Logger;
 
 
 public class HomePage extends BasePage{
+	 public HomePage  homePage;
+
 	static Logger log = Logger.getLogger(HomePage.class);
 //	private By btn_Burger = (By.xpath("//*[@class='container-fluid px-4']//button[@id='drawerToggle']"));
 //	private By Darhboard = (By.xpath("//*[@class='container-fluid px-4']"));
 	private String listlinks = "//*[@class='drawer-menu']//div[@class='nav-link-icon']";
-	private	@FindBy(how = How.XPATH, using = "//*[@class='container-fluid px-4']//button[@id='drawerToggle']") WebElement btn_Burger;
-	private	@FindBy(how = How.XPATH, using = "//*[@class='container-fluid px-4']") WebElement Darhboard;
+	@FindBy(how = How.XPATH, using = "//*[@class='container-fluid px-4']//button[@id='drawerToggle']") 
+	private WebElement btn_Burger;
+	@FindBy(how = How.XPATH, using = "//*[@class='container-fluid px-4']") 
+	private	WebElement Darhboard;
 
 
 	public HomePage(WebDriver driver) {
@@ -51,7 +55,7 @@ public class HomePage extends BasePage{
 			List<String> wid = new ArrayList<String>(driver.getWindowHandles());
 			action.keyDown(Keys.SHIFT);
 			driver.findElement((By) link).click();
-			action.keyUp(Keys.SHIFT).perform();
+			action.keyUp(Keys.SHIFT).build().perform();
 			driver.switchTo().window(wid.get(index));
 			System.out.println("Page title of active tab: " + driver.getTitle());
 			String actualURL = driver.getCurrentUrl();

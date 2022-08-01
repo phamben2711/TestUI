@@ -16,6 +16,9 @@ import utils.logs.Log;
 import AutoScript.ExampleText.Test.TestBase;
 
 public class TestListener extends TestBase implements ITestListener {
+	
+
+
 	private static String getTestMethodName(ITestResult iTestResult) {
         return iTestResult.getMethod().getConstructorOrMethod().getName();
     }
