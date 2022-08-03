@@ -28,8 +28,12 @@ import AutoScript.ExampleText.Page.HomePage;
 
 
 
-public class CommonAction  {
-	public static WebDriver driver;
+public class CommonAction extends BasePage {
+
+	public CommonAction(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
 	static Logger log = Logger.getLogger(HomePage.class);
 
 	private static JavascriptExecutor js=(JavascriptExecutor) driver;

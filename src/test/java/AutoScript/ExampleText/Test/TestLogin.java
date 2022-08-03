@@ -2,7 +2,7 @@ package AutoScript.ExampleText.Test;
 
 
 
-import static utils.extentreports.ExtentTestManager.startTest;
+
 
 import java.lang.reflect.Method;
 

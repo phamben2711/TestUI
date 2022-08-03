@@ -13,12 +13,16 @@ import com.aventstack.extentreports.Status;
 import static utils.ExtentReports.ExtentTestManager.getTest;
 import utils.ExtentReports.ExtentManager;
 import utils.logs.Log;
+import AutoScript.ExampleText.Page.BasePage;
 import AutoScript.ExampleText.Test.TestBase;
 
-public class TestListener extends TestBase implements ITestListener {
+public class TestListener extends BasePage implements ITestListener {
 	
 
-
+	public TestListener(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
 	private static String getTestMethodName(ITestResult iTestResult) {
         return iTestResult.getMethod().getConstructorOrMethod().getName();
     }

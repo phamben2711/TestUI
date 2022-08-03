@@ -2,6 +2,7 @@ package AutoScript.ExampleText.Test;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -14,13 +15,14 @@ import utils.logs.Log;
 
 public class TestBase   {
 
-	public WebDriver driver;
+
+	public static ThreadLocal<WebDriver> sessionDriver  = new InheritableThreadLocal<WebDriver>();
     public HomePage  homePage;
     public LoginPage loginPage;
-    public WebDriver getDriver() {
-        return driver;
+  
+    public static void setDriver(WebDriver driver) {
+		sessionDriver.set(driver);
     }
-
     @BeforeClass
     public void classLevelSetup() {
         Log.info("Tests is starting!");
