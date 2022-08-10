@@ -52,7 +52,7 @@ public class TestListener extends BasePage implements ITestListener {
         Log.info(getTestMethodName(iTestResult) + " test is failed.");      
         //Get driver from BaseTest and assign to local webdriver variable.
         Object testClass = iTestResult.getInstance();
-        WebDriver driver = ((TestBase) testClass).getDriver();
+        WebDriver driver = ((BasePage) testClass).getDriver();
         //Take base64Screenshot screenshot for extent reports
         String base64Screenshot =
             "data:image/png;base64," + ((TakesScreenshot) Objects.requireNonNull(driver)).getScreenshotAs(OutputType.BASE64);

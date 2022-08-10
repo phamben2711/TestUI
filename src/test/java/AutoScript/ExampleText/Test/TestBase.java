@@ -13,16 +13,18 @@ import AutoScript.ExampleText.Page.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import utils.logs.Log;
 
-public class TestBase   {
+public class TestBase   extends BasePage{
 
 
+	public TestBase(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
 	public static ThreadLocal<WebDriver> sessionDriver  = new InheritableThreadLocal<WebDriver>();
     public HomePage  homePage;
     public LoginPage loginPage;
   
-    public static void setDriver(WebDriver driver) {
-		sessionDriver.set(driver);
-    }
+  
     @BeforeClass
     public void classLevelSetup() {
         Log.info("Tests is starting!");
